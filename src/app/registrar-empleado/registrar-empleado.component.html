@@ -1,1 +1,32 @@
-<p>registrar-empleado works!</p>
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Registrar empleado</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Nombre:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombreEmpleado"
+        [(ngModel)]="empleado.nombreEmpleado"
+        name="nombreEmpleado"
+      />
+      <label>Apellido:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="apellidoEmpleado"
+        [(ngModel)]="empleado.apellidoEmpleado"
+        name="apellidoEmpleado"
+      />
+      <label>Email:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="emailEmpleado"
+        [(ngModel)]="empleado.emailEmpleado"
+        name="emailEmpleado"
+      />
+    </div>
+    <button class="btn btn-success">guardar</button>
+  </form>
+</div>

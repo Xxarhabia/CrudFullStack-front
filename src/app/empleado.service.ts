@@ -13,9 +13,14 @@ export class EmpleadoService {
 
   constructor(private httpClient : HttpClient) { }
 
-  //obtiene los empleados 
+  //obtiene los empleados mediante get
   listarTodosLosEmpleados():Observable<Empleado[]>{
     return this.httpClient.get<Empleado[]>(`${this.baseURL}`)
+  }
+
+  //manda un objeto empleado por post registrandolo
+  registrarEmpleado(empleado:Empleado):Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}`,empleado);
   }
 
 }
