@@ -23,4 +23,19 @@ export class EmpleadoService {
     return this.httpClient.post(`${this.baseURL}`,empleado);
   }
 
+  //manda mediante un put los nuevos datos del empleado para actualizarlo
+  actualizarEmpleado(idEmpleado:number, empleado:Empleado):Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/${idEmpleado}`,empleado);
+  }
+
+  //obtiene el empleado mediante su id
+  obtenerEmpleadoPorId(idEmpleado:number):Observable<Object>{
+    return this.httpClient.get(`${this.baseURL}/${idEmpleado}`);
+  }
+
+  //elimina al empleado mediante su id
+  eliminarEmpleado(idEmpleado: number):Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${idEmpleado}`);
+  }
+
 }

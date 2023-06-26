@@ -5,6 +5,7 @@
       <th>Nombre</th>
       <th>Apellido</th>
       <th>Email</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody class="">
@@ -12,6 +13,21 @@
       <td>{{ empleado.nombreEmpleado }}</td>
       <td>{{ empleado.apellidoEmpleado }}</td>
       <td>{{ empleado.emailEmpleado }}</td>
+      <td>
+        <button
+          (click)="actualizarEmpleado(empleado.idEmpleado)"
+          class="btn btn-info"
+        >
+          Actualizar
+        </button>
+        <button
+          (click)="eliminarEmpleado(empleado.idEmpleado)"
+          class="btn btn-danger"
+          style="margin-left: 10px"
+        >
+          Eliminar
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
